@@ -23,7 +23,7 @@
 			</div>
 		</div>
 		<div id="container">
-			<div class="section">
+			<div class="section active">
 				<img src="img/part1_1.png" alt="" class="" data-class="fadeInLeft">
 				<img src="img/part1_2.png" alt="" class="" data-class="fadeInRight">
 				<img src="img/part1_3.png" alt="" class="" data-class="fadeInRight">
@@ -95,7 +95,7 @@
 				<div class="down-arrow animationDelay1 infinite" data-class="fadeInUp"></div>
 				<div class="logo"></div>
 			</div>
-			<div class="section active">
+			<div class="section">
 				<img src="img/part7_1.png" alt="" class="" data-class="fadeIn">
 				<img src="img/part7_2.png" alt="" class="" data-class="fadeInRight">
 				<img src="img/part7_3.png" alt="" class="animationDelay1" data-class="fadeIn">
@@ -149,7 +149,7 @@
         $(document).on('contextmenu', function () {
 			return false;
         });
-        $('a').on('touchstart', function () {
+        $('.section .more').on('touchstart', function () {
             var href = $(this).attr('href');
             // window.location.href = href;
             window.open(href, '_blank');
