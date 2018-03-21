@@ -17,7 +17,7 @@
 	</head>
 	<body>
 		<div class="bgsong pause">
-			<audio src="img/bgsong.mp3" autoplay loop id="audio"></audio>
+			<audio src="img/bgsong.mp3" loop id="audio"></audio>
 			<div class="bgsong-menu">
 				<div></div>
 			</div>
@@ -132,6 +132,7 @@
 	<script>
 
 
+        //处理旋转
 		function watchOrientation() {
 			var o = window.orientation;
             var ro = document.querySelector('.rightori');
@@ -144,11 +145,12 @@
         watchOrientation();
         window.onorientationchange = watchOrientation;
 
-
+        //
         $(document).on('contextmenu', function () {
 			return false;
         });
 
+        //
 		function audioPlay(arg) {
 			var audio = document.querySelector('#audio');
 			var bgsong = document.querySelector('.bgsong');
@@ -166,16 +168,19 @@
                 audio.play();
 			}
         }
-        audioPlay();
+        if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
+            $(document).one('touchstart', function () {
+                audioPlay();
+            });
+        }else{
+		    audioPlay();
+        }
 
 		window.onload = function () {
 
 		    $('.bgsong-menu').on('touchstart', function () {
 				audioPlay('click');
 				return false;
-            });
-		    $(document).one('touchstart', function () {
-				audioPlay();
             });
 
 		    //加载动画
