@@ -75,30 +75,42 @@ function fullpage(cb, animateEnd){
 					my = e.targetTouches[0].clientY;
 					ry = my - sy;
 					var scale;
-					if(ry>0 && p.length){
+					if(ry>0){
 						scale = 1 - ry / wh / 2;
-						active.css({
-							transform: 'scale(' + scale + ')',
-							transformOrigin: 'center bottom',
-						});
-						n.css({
-							transform: 'translate(0,100%)'
-						});
-						p.css({
-							transform: 'translate(0, ' + (ry - wh) + 'px)',
-							zIndex: 2
-						});
+						if(p.length){
+                            active.css({
+                                transform: 'scale(' + scale + ')',
+                                transformOrigin: 'center bottom',
+                            });
+                            p.css({
+                                transform: 'translate(0, ' + (ry - wh) + 'px)',
+                                zIndex: 2
+                            });
+						}else{
+                            active.css({
+                                transform: 'scale(1)',
+                            });
+						}
+                        n.css({
+                            transform: 'translate(0,100%)'
+                        });
 					}
-					else if(ry<=0 && n.length){
+					else if(ry<=0){
 						scale = (1 + ry/wh/2) <.5? .5 : (1 + ry/wh/2);
-						active.css({
-							transform: 'scale(' + scale + ')',
-							transformOrigin: 'center top',
-						});
-						n.css({
-							transform: 'translate(0, ' + (wh + ry) + 'px)',
-							zIndex: 2
-						});
+						if(n.length){
+                            active.css({
+                                transform: 'scale(' + scale + ')',
+                                transformOrigin: 'center top',
+                            });
+                            n.css({
+                                transform: 'translate(0, ' + (wh + ry) + 'px)',
+                                zIndex: 2
+                            });
+						}else{
+                            active.css({
+                                transform: 'scale(1)',
+                            });
+						}
 						p.css({
 							transform: 'translate(0,-100%)'
 						});
