@@ -168,7 +168,7 @@
         }
         audioPlay();
 
-		$(function () {
+		window.onload = function () {
 
 		    $('.bgsong-menu').on('touchstart', function () {
 				audioPlay('click');
@@ -195,7 +195,7 @@
                 });
             });
 
-		});
+		};
 
 	</script>
 </html>
