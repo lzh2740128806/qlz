@@ -40,7 +40,7 @@ function fullpage(cb, animateEnd){
 			
 			}
 
-			$(document).on('touchstart', function(e){
+			$(el).on('touchstart', function(e){
 
                 e.preventDefault();
 
@@ -68,7 +68,7 @@ function fullpage(cb, animateEnd){
 					transform: 'translate(0,100%)'
 				});
 
-                $(document).on('touchmove', function(e){
+                $(el).on('touchmove', function(e){
 
                     e.preventDefault();
 
@@ -118,12 +118,12 @@ function fullpage(cb, animateEnd){
 
 				});
 
-                $(document).on('touchend', function(e){
+                $(el).on('touchend', function(e){
 
                     e.preventDefault();
 
-                    $(document).off('touchmove');
-                    $(document).off('touchend');
+                    $(el).off('touchmove');
+                    $(el).off('touchend');
 
 					canswipe = false;
 

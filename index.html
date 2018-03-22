@@ -7,6 +7,11 @@
 		<title>巧乐兹新品甜蜜上市</title>
 		<link rel="stylesheet" href="css/index.css">
 		<link rel="stylesheet" href="css/animate.css">
+		<style>
+			.section{
+				background-color: #e77a91;
+			}
+		</style>
 		<script>
             function setRem() {
                 document.documentElement.style.fontSize = 100/640*window.innerWidth + 'px';
@@ -24,33 +29,39 @@
 		</div>
 		<div id="container">
 			<div class="section active">
-				<img src="img/part1_1.png" alt="" class="" data-class="fadeInLeft">
-				<img src="img/part1_2.png" alt="" class="" data-class="fadeInRight">
-				<img src="img/part1_3.png" alt="" class="" data-class="fadeInRight">
-				<img src="img/part1_4.png" alt="" class="" data-class="fadeIn">
-				<img src="img/part1_5.png" alt="" class="" data-class="fadeIn">
+				<img src="img/part1_1.png" alt="" class="" data-class="move1">
+				<img src="img/part1_2.png" alt="" class="" data-class="move2">
+				<img src="img/part1_3.png" alt="" class="" data-class="move3">
+				<img src="img/part1_4.png" alt="" class="" data-class="rotatemove4">
+				<img src="img/part1_5.png" alt="" class="" data-class="rotatemove3">
 				<img src="img/part1_6.png" alt="" class="animationDelay1" data-class="fadeIn">
 				<img src="img/part1_tit.png" alt="" class="animationDelay05" data-class="zoomIn">
 				<div class="down-arrow animationDelay1 infinite" data-class="fadeInUp"></div>
 				<div class="logo"></div>
 			</div>
 			<div class="section">
-				<img src="img/part2_1.png" alt="" class="" data-class="fadeIn">
+				<img src="img/part2_1.png" alt="" class="" data-class="fadeInDown">
 				<img src="img/part2_2.png" alt="" class="animationDelay05" data-class="fadeInDown">
-				<img src="img/part2_3.png" alt="" class="" data-class="fadeIn">
-				<img src="img/part2_4.png" alt="" class="animationDelay1" data-class="fadeInDown">
-				<img src="img/part2_5.png" alt="" class="animationDelay1" data-class="fadeInRight">
-				<img src="img/part2_6.png" alt="" class="animationDelay1" data-class="fadeInLeft">
-				<img src="img/part2_7.png" alt="" class="animationDelay15" data-class="fadeInUp">
-				<img src="img/part2_8.png" alt="" class="animationDelay2" data-class="fadeIn">
-				<img src="img/part1_5.png" alt="" class="animationDelay1" data-class="fadeIn">
+				<img src="img/part2_3.png" alt="" class="" data-class="fadeInUp">
+				<img src="img/part2_4.png" alt="" class="" data-class="move4">
+				<img src="img/part2_5.png" alt="" class="" data-class="move5">
+				<img src="img/part2_6.png" alt="" class="" data-class="move6">
+				<img src="img/part2_7.png" alt="" class="animationDelay05" data-class="fadeInUp">
+                <img src="img/part1_5.png" alt="" class="animationDelay1" data-class="fadeIn">
+                <!--<img src="img/part2_8.png" alt="" class="animationDelay2" data-class="fadeIn">-->
+                <img src="img/part2_h1.png" alt="" class="" data-class="rotatemove3">
+                <img src="img/part2_h2.png" alt="" class="animationDelay2" data-class="rotatemove2">
+                <img src="img/part2_h3.png" alt="" class="animationDelay1" data-class="rotatemove2">
+                <img src="img/part2_h4.png" alt="" class="" data-class="rotatemove1">
+                <img src="img/part2_h5.png" alt="" class="animationDelay05" data-class="rotatemove2">
+                <img src="img/part2_h2.png" alt="" class="animationDelay2" data-class="rotatemove3">
 				<div class="down-arrow animationDelay1 infinite" data-class="fadeInUp"></div>
 				<div class="logo"></div>
 			</div>
 			<div class="section">
 				<img src="img/part3_1.png" alt="" class="" data-class="fadeIn">
 				<img src="img/part3_2.png" alt="" class="animationDelay05" data-class="fadeIn">
-				<img src="img/part3_3.png" alt="" class="animationDelay05" data-class="fadeInDown">
+				<img src="img/part3_3.png" alt="" class="animationDelay05" data-class="fadeIn">
 				<img src="img/part3_4.png" alt="" class="animationDelay1" data-class="bounceIn">
 				<img src="img/part3_5.png" alt="" class="animationDelay1" data-class="fadeInUp">
 				<img src="img/part3_6.png" alt="" class="animationDelay15" data-class="fadeIn">
@@ -62,7 +73,7 @@
 				<img src="img/part4_1.png" alt="" class="" data-class="fadeIn">
 				<img src="img/part4_2.png" alt="" class="" data-class="fadeIn">
 				<img src="img/part4_3.png" alt="" class="animationDelay05" data-class="fadeInDown">
-				<img src="img/part4_4.png" alt="" class="animationDelay1" data-class="rollIn">
+				<img src="img/part4_4.png" alt="" class="animationDelay1" data-class="bounceInDown">
 				<img src="img/part4_5.png" alt="" class="animationDelay05" data-class="fadeInLeft">
 				<img src="img/part4_6.png" alt="" class="animationDelay05" data-class="fadeIn">
 				<img src="img/part4_7.png" alt="" class="animationDelay05" data-class="fadeInRight">
@@ -124,6 +135,7 @@
 				<canvas id="canvas" width="200" height="200"></canvas>
 			</div>
 		</div>
+		<div class="share-layer" style="display: none"></div>
 	</body>
 	<script src="js/loadding.js"></script>
 	<!--<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>-->
@@ -151,8 +163,21 @@
         });
         $('.section .more').on('touchstart', function () {
             var href = $(this).attr('href');
-            // window.location.href = href;
-            window.open(href, '_blank');
+            window.location.href = href;
+            window.open(href, '_self');
+            return false;
+        });
+        var layer = $('.share-layer');
+        $('.section .share').on('touchstart', function () {
+            layer.show();
+            layer.css('opacity', '1');
+            return false;
+        });
+        layer.on('touchend', function () {
+            layer.css('opacity', '0');
+            setTimeout(function () {
+                layer.hide();
+            }, 300);
             return false;
         });
 
@@ -182,7 +207,7 @@
 		    audioPlay();
         }
 
-		$(function () {
+		window.onload = function () {
 
 		    $('.bgsong-menu').on('touchstart', function () {
 				audioPlay('click');
@@ -206,7 +231,7 @@
                 });
             });
 
-		});
+		};
 
 	</script>
 </html>
